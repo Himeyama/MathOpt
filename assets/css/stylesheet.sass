@@ -1,0 +1,209 @@
+---
+---
+
+$font-color: #334
+$a-color: #29e
+$bg-gray: #eef
+
+body
+    margin: 0
+    color: $font-color
+    display: flex
+    flex-flow: column
+    min-height: 100vh
+    font-size: 13.2835px
+
+    a
+        color: $a-color
+        text-decoration: none
+
+    header
+        height: 80px
+        background: $font-color
+        color: $bg-gray
+        line-height: 80px
+        font-size: 26px
+        user-select: none
+        div#header
+            max-width: 1200px
+            margin: 0 auto
+            a
+                color: $bg-gray
+
+    footer
+        height: 80px
+        text-align: center
+        line-height: 80px
+        margin-top: 32px
+        background-color: $bg-gray
+
+
+    article
+        flex: 1
+        margin: 0 auto
+        max-width: 1200px
+        width: 100%
+        font-family: serif
+
+        table
+            border-collapse: collapse
+            font-family: sans
+            th, td
+                border: 1px solid #dfe2e5
+                padding: 6px 12px
+                line-height: 1.8
+
+            tr
+                &:nth-child(2n)
+                    background: #f6f8fa
+
+
+        .article_time_box
+            color: #889
+            margin-top: 32px
+            margin-bottom: -32px
+
+        blockquote
+            border-left: 4px solid #dde
+            margin-left: 0
+            padding-left: 32px
+
+        p
+            margin-bottom: 0px
+            margin-top: 0
+            text-indent: 1em
+            line-height: 1.73em
+
+        dl p
+            text-indent: unset
+
+        dt
+            margin: 8px 0
+
+        h1.article_title
+            font-size: 40px
+            border: none
+            max-width: 1200px
+
+        section
+            font-size: 16px
+            counter-reset: h1
+
+            .mjx-chtml.MathJax_CHTML
+                font-size: 100% !important
+
+            dl
+                font-family: sans
+                dt
+                    font-weight: bold
+
+            #program
+                font-family: sans
+                background: #eee
+                margin-top: 8px
+                padding: 8px 0
+                border-left: solid 5px #673AB7
+                border-bottom: solid 1px #673AB7
+                counter-increment: program
+                &::before
+                    content: "コード" counter(program) ": "
+                    
+            #md-table
+                counter-increment: md-table
+                margin-top: 16px
+                margin-bottom: 4px
+                font-weight: 500
+                &::before
+                    content: "表" counter(md-table) ": "
+
+            code.highlighter-rouge 
+                font-family: monospace
+                padding: 0 8px
+
+            pre.highlight
+                margin-top: 0 !important
+
+            ol
+                margin: 4px 0
+                line-height: 1.75
+
+            h1
+                counter-increment: h1
+                counter-reset: h2
+                font-size: 1.5em
+                margin: 1em 0
+                line-height: 1.5em
+            h2
+                counter-increment: h2
+                counter-reset: h3
+                font-size: 1.2em
+                margin: 1em 0
+                line-height: 1.2em
+            h3
+                counter-increment: h3
+                counter-reset: h4
+                margin: 1em 0
+                line-height: 1em
+
+            h4, h5, h6
+                margin: 1em 0
+                line-height: 1em
+
+            h1:before
+                content: counter(h1) "　"
+            h2:before
+                content: counter(h1) "." counter(h2) "　"
+            h3:before
+                content: counter(h1) "." counter(h2) "." counter(h3) "　"
+
+            max-width: 1200px
+
+            code.highlighter-rouge
+                color: #000
+                background-color: #f8f9fa
+                border: 1px solid #eaecf0
+                border-radius: 2px
+
+            h1, h2, h3, h4, h5, h6
+                font-family: sans-serif
+                font-weight: normal            
+
+            div.highlight
+                background: #eee
+                border-left: 5px solid #673AB7
+                font-family: Consolas,Monaco,'Andale Mono','Ubuntu Mono',monospace
+                pre.highlight
+                    padding: 16px
+                    border-radius: 4px
+                    overflow-x: auto
+
+                pre
+                    code
+                        code
+                            counter-increment: linenumber
+                    
+                        & > code::before
+                            content: counter(linenumber)
+                            width: 32px
+                            display: inline-block
+                            text-align: right
+                            margin-right: 18px
+                            font-weight: normal
+                            color: #889
+                            border-right: 1px solid #999999
+                            padding-right: 12px
+
+@media screen and (max-width:360px)
+    body
+        article
+            margin: 0 8px
+            width: unset
+        header
+            div#header
+                margin-left: 8px
+                
+@media screen and (max-width:1200px)
+    body
+        article
+            margin: 0 16px
+            width: unset
